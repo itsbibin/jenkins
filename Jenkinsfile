@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "We are in test phase"
-                mnv test bibin-war-src/
+                mvn test bibin-war-src/
             }
 
             post {
