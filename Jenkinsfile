@@ -6,12 +6,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo "We are in build phase"
+                sh '''
+                   echo "We are in build phase"
+                   /usr/bin/mvn package -f bibin-war-src
+                '''
             }
 
             post {
                 success {
-                   echo "We are in build phase post success"
+                   archiveArtifacts artifacts: 'bibin-war-src/target/*.war', fingerprint: true
                 }
             }
         }
