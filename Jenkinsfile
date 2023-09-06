@@ -18,8 +18,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo "We are in test phase"
-                mvn test bibin-war-src/
+                /usr/bin/mvn test bibin-war-src/
             }
 
             post {
