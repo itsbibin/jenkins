@@ -39,12 +39,27 @@ pipeline {
             }
         }
 
+
+
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                echo "Building docker image"
+                cp ../bibin-war-src/target/hello-2.0.war docker-build/
+                cd docker-build/
+                docker build -t myjenkinsapp
+                docker tag myjenkinsapp bkur/myappwar80:latest
+                '''
+            }
+        }
+
+
         stage('Push') {
             steps {
                 sh '''
                 echo "We are in build push phase"
                 docker login -u bkur -p $REGPASS
-                docker push bkur/myappwar80:2.0
+                docker push bkur/myappwar80:latest
                 '''
             }
         }
