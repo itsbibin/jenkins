@@ -4,7 +4,7 @@ pipeline {
     
     
     environment {
-        REGPASS = "QO4$@C@@DZ%R" 
+        REGPASS = 'QO4$@C@@DZ%R' 
     }
 
     stages {
