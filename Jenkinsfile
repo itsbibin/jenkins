@@ -44,7 +44,6 @@ pipeline {
                 sh '''
                 echo "We are in build push phase"
                 docker login -u bkur -p $REGPASS
-//                docker tag bibin-war-src/target/*.war bkur/myappwar80:2.0
                 docker push bkur/myappwar80:2.0
                 '''
             }
