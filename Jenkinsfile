@@ -4,7 +4,7 @@ pipeline {
     
     
     environment {
-        REGPASS = 'credentials' 
+        REGPASS = 'ucredentials' 
     }
 
     stages {
