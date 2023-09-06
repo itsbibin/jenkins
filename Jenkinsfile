@@ -4,7 +4,7 @@ pipeline {
     
     
     environment {
-        REGPASS = credentials('docker-hub-pass') 
+        REGPASS = 'credentials' 
     }
 
     stages {
