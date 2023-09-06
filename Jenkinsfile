@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                   echo "We are in the test  phase"
-                  /usr/bin/mvn test /var/lib/jenkins/workspace/bibin-war-file-deploy/bibin-war-src/
+                  /usr/bin/mvn test -f bibin-war-src
                 '''
             }
 
