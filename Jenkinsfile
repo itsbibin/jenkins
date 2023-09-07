@@ -66,7 +66,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo "We are in deploy phase"
+                sh '''
+                echo "Deploying the new image to Kubernetes cluster"
+                /usr/local/bin/kubectl apply -f k8/bibinapp_deploy.yaml
+                '''
             }
         }
     }

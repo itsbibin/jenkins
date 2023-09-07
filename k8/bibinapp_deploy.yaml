@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bibinapp
+  name: bibinapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bibinapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bibinapp
+    spec:
+      containers:
+      - image: bkur/myappwar80:latest
+        name: myappwar80
+        resources: {}
+status: {}
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bibinapp
+  name: bibinapp
+spec:
+  ports:
+  - port: 8090
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 32080
+  selector:
+    app: bibinapp
+  type: NodePort
+status:
+  loadBalancer: {}
