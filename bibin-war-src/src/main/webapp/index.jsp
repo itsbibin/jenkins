@@ -7,6 +7,6 @@
 <title>Hello from Bibin</title>
 </head>
 <body>
-<%= "Hello World from Bibin K!" %>
+<%= "Hello World from Bibin Kuruvilla!" %>
 </body>
 </html>
