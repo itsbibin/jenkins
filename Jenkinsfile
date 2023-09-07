@@ -59,7 +59,7 @@ pipeline {
                 sh '''
                 echo "We are in build push phase"
                 docker login -u bkur -p $REGPASS
-                docker push bkur/myappwar80:latest
+                docker push bkur/myappwar80:$BUILD_NUMBER
                 '''
             }
         }
