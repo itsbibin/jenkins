@@ -68,7 +68,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Deploying the new image to Kubernetes cluster"
-                /usr/local/bin/kubectl apply -f k8/bibinapp_deploy.yaml
+                envsubst < k8/bibinapp_deploy.yaml | /usr/local/bin/kubectl apply -f -
                 '''
             }
         }

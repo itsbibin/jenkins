@@ -18,7 +18,7 @@ spec:
         app: bibinapp
     spec:
       containers:
-      - image: bkur/myappwar80:latest
+      - image: bkur/myappwar80:$BUILD_NUMBER
         name: myappwar80
         resources: {}
 status: {}
