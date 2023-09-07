@@ -49,7 +49,6 @@ pipeline {
                 cd docker-build/
                 docker build -t myjenkinsapp .
                 docker tag myjenkinsapp bkur/myappwar80:$BUILD_NUMBER
-                docker tag myjenkinsapp bkur/myappwar80:latest
                 '''
             }
         }
